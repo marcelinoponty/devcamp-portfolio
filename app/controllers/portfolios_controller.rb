@@ -1,7 +1,13 @@
 class PortfoliosController < ApplicationController
 
 def index
-	@portfolio_items = Portfolio.all
+  @subtitle = params[:subtitle]
+
+  if @subtitle == nil
+    @portfolio_items = Portfolio.all
+  else
+	  @portfolio_items = Portfolio.get_by_subtitle(@subtitle)
+  end
 end
 
 def new
