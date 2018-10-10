@@ -1,4 +1,4 @@
-<H1>Portfolio Items</H1>
+<H1>Portfolio Items <%= "(#{@subtitle})" if @subtitle.present? %></H1>
 
 <%= link_to "Create new portfolio", new_portfolio_path %>
 
