@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
 
+layout "portfolio"
+
 def index
   @page_title = 'Portfolios'
   @subtitle = params[:subtitle]
