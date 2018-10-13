@@ -1,6 +1,7 @@
 class PortfoliosController < ApplicationController
 
 def index
+  @page_title = 'Portfolios'
   @subtitle = params[:subtitle]
 
   if @subtitle == nil
