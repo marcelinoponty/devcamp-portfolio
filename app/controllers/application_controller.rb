@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   include DeviseWhitelist
   include SetSource
+  include CurrentUserConcern
+  include DefaultPageContent
 
-  def current_user
-  	super || OpenStruct.new(name: "Guest", first_name: "Guest", last_name: "Guest")
-  end
 end

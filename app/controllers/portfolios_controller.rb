@@ -1,6 +1,9 @@
 class PortfoliosController < ApplicationController
 
+layout "portfolio"
+
 def index
+  @page_title = 'Portfolios'
   @subtitle = params[:subtitle]
 
   if @subtitle == nil
@@ -8,6 +11,7 @@ def index
   else
 	  @portfolio_items = Portfolio.get_by_subtitle(@subtitle)
   end
+  
 end
 
 def new
@@ -30,6 +34,7 @@ end
 
 def edit
 	@portfolio_item = Portfolio.find(params[:id])
+  3.times { @portfolio_item.technologies.build }
 end
 
   def update
