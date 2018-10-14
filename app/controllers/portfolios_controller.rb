@@ -11,6 +11,7 @@ def index
   else
 	  @portfolio_items = Portfolio.get_by_subtitle(@subtitle)
   end
+  
 end
 
 def new
